@@ -52,7 +52,22 @@ import {
   Link
 } from 'react-router-dom'
 
+const containerStyle = {
+//  width: store.screen.width,
+//  height: store.screen.height - 30,
+  position: 'absolute' ,
+  overflow: 'hidden' ,
+  left: 0,
+  top: 0,
+  whiteSpace: "nowrap",
+     textOverflow: "ellipsis",
+};
 
+function sayWord() {
+//  var msg = new SpeechSynthesisUtterance(store.word);
+//  msg.lang = 'en-US';
+//  speechSynthesis.speak(msg);
+}
 
 const home = () => (
   <div>
