@@ -100,8 +100,8 @@ const home = () => (
 const Square4 = () => (
   <div>
     <div>
-
   <div>
+    <br/>
     <center>
 <button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }} id ="button">
   <h2 style={{height: 5}}>Like</h2>
@@ -175,12 +175,13 @@ const Square4 = () => (
 //second section
 const Square9 = () => (
   <div>
-  <center><h2>9 Square Universal Core Communication Book</h2></center>
     <div>
 
   <div>
     <center>
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={like} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Like</h2>
+  <input type="image" src={like} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -189,11 +190,13 @@ const Square9 = () => (
 
     </script>
 
-<h2>Like</h2>
+
 </button>
 {"\n"}
 
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={want}></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Want</h2>
+   <input type="image" src={want}></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -202,10 +205,12 @@ const Square9 = () => (
 
     </script>
 
-<h2>Want</h2>
+
 </button>
 {"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={get} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Get</h2>
+  <input type="image" src={get} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -214,11 +219,13 @@ const Square9 = () => (
 
     </script>
 
-<h2>Get</h2>
+
 </button>
 
 <br />
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={not}></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Not</h2>
+   <input type="image" src={not}></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -227,10 +234,12 @@ const Square9 = () => (
 
     </script>
 
-<h2>Not</h2>
+
 </button>
 {"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={go} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Go</h2>
+   <input type="image" src={go} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -239,10 +248,12 @@ const Square9 = () => (
 
     </script>
 
-<h2>Go</h2>
+
 </button>
 {"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={look} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Look</h2>
+  <input type="image" src={look} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -251,12 +262,13 @@ const Square9 = () => (
 
     </script>
 
-<h2>Look</h2>
 </button>
 
 
 <br />
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={I1}  ></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>I</h2>
+<input type="image" src={I1}  ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -265,10 +277,11 @@ const Square9 = () => (
 
     </script>
 
-<h2>I</h2>
 </button>
 {"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={he}  ></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>He</h2>
+   <input type="image" src={he}  ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -277,10 +290,11 @@ const Square9 = () => (
 
     </script>
 
-<h2>He</h2>
+
 </button>
 {"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={open}></input>
+<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Open</h2> <input type="image" src={open}></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -289,7 +303,7 @@ const Square9 = () => (
 
     </script>
 
-<h2>Open</h2>
+
 </button>
 </center>
 <br />
