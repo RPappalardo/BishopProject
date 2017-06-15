@@ -70,11 +70,14 @@ function sayWord() {
 }
 
 const home = () => (
-  <div>
-    <br/>
+
+  <div >
   <center>
-    <h2>Universal Core Communication Systems</h2>
-  <br/>
+    <div>
+    <h2 style={{ backgroundColor: 'skyblue' }}>Universal Core Communication Systems</h2>
+      <img src={unclogo} style={{width: 170, height: 100}} />
+</div>
+<br/>
   <button><h5>4 Square Universal Core Communication Book</h5>
   <Link to="/Square4" style={{ textDecoration: 'none' }}><input type="image" src={SquareNum4} ></input></Link>
 </button>
@@ -88,7 +91,6 @@ const home = () => (
 </button>
 
 </center>
-<br/>
     </div>
 )
 
@@ -97,12 +99,13 @@ const home = () => (
 // first section
 const Square4 = () => (
   <div>
-    <center><h2>4 Square Universal Core Communication Book</h2></center>
     <div>
 
   <div>
     <center>
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={like} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }} id ="button">
+  <h2 style={{height: 5}}>Like</h2>
+ <input type="image" src={like} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -111,11 +114,12 @@ const Square4 = () => (
 
     </script>
 
-<h2>Like</h2>
 </button>
 {"\n"}
 
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={want} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Want</h2>
+ <input type="image" src={want} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -124,11 +128,13 @@ const Square4 = () => (
 
     </script>
 
-<h2>Want</h2>
+
 </button>
 
 <br />
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={not} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Not</h2>
+<input type="image" src={not} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -137,10 +143,12 @@ const Square4 = () => (
 
     </script>
 
-<h2>Not</h2>
+
 </button>
 {"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={go} ></input>
+<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }}>
+  <h2 style={{height: 5}}>Go</h2>
+<input type="image" src={go} ></input>
 <script>
         var su = new SpeechSynthesisUtterance();
         su.lang = "en";
@@ -149,7 +157,7 @@ const Square4 = () => (
 
     </script>
 
-<h2>Go</h2>
+
 </button>
 {"\n"}
 </center>
@@ -796,18 +804,7 @@ const BasicExample = () => (
   <Router>
     <div>
       <div className="App">
-        <div className="App-header"  style={{backgroundColor: 'skyblue'}} >
-          <img src={unclogo} style={{width: 170, height: 100}} />
 
-  <hr/>
-
- <ul className="header">
-   <button class="btn btn-default btn-lg btn-block"><Link to="/" style={{ textDecoration: 'none' }}>Home</Link></button>
-        <button class="btn btn-default btn-lg btn-block"><Link to="/Square4" style={{ textDecoration: 'none' }}>4-Square</Link></button>
-        <button  class="btn btn-default btn-lg btn-block"><Link to="/Square9" style={{ textDecoration: 'none' }}>9-Square</Link></button>
-        <button class="btn btn-default btn-lg btn-block"><Link to="/Square36" style={{ textDecoration: 'none' }}>36-Square</Link></button>
-</ul>
-</div>
 </div>
 <Route exact path="/" component={home}/>
   <Route path="/0" component={home}/>
