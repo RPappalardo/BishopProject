@@ -52,6 +52,34 @@ import {
   Link
 } from 'react-router-dom'
 
+
+var WindowDimensions = React.createClass({
+    render: function() {
+        return <span>{this.state.width} x {this.state.height}</span>;
+    },
+    updateDimensions: function() {
+
+    var w = window,
+        d = document,
+        documentElement = d.documentElement,
+        body = d.getElementsByTagName('body')[0],
+        width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
+        height = w.innerHeight|| documentElement.clientHeight|| body.clientHeight;
+
+        this.setState({width: width, height: height});
+        // if you are using ES2015 I'm pretty sure you can do this: this.setState({width, height});
+    },
+    componentWillMount: function() {
+        this.updateDimensions();
+    },
+    componentDidMount: function() {
+        window.addEventListener("resize", this.updateDimensions);
+    },
+    componentWillUnmount: function() {
+        window.removeEventListener("resize", this.updateDimensions);
+    }
+});
+
 const containerStyle = {
 //  width: store.screen.width,
 //  height: store.screen.height - 30,
@@ -71,25 +99,27 @@ function sayWord() {
 
 const home = () => (
 
-  <div >
+  <div id = "home">
   <center>
     <div>
     <h2 style={{ backgroundColor: 'skyblue' }}>Universal Core Communication Systems</h2>
       <img src={unclogo} style={{width: 170, height: 100}} />
 </div>
-<br/>
-  <button><h5>4 Square Universal Core Communication Book</h5>
-  <Link to="/Square4" style={{ textDecoration: 'none' }}><input type="image" src={SquareNum4} ></input></Link>
-</button>
+<table>
+  <tr>
+<td> <h5>4 Square Universal Core Communication Book</h5> <button>
+  <Link to="/Square4" style={{ textDecoration: 'none' }}><img src={SquareNum4} /></Link>
+</button> </td>
 {"\n"}
-<button><h5>9 Location Universal Core Communication Book</h5>
-  <Link to="/Square9" style={{ textDecoration: 'none' }}><input type="image" src={SquareNum9}></input></Link>
-</button>
+<td><h5>9 Location Universal Core Communication Book</h5><button>
+  <Link to="/Square9" style={{ textDecoration: 'none' }}><img src={SquareNum9} /></Link>
+</button> </td>
 {"\n"}
-<button><h5>36 Location Universal Core Communication Board</h5>
-  <Link to="/Square36" style={{ textDecoration: 'none' }}><input type="image" src={SquareNum36} ></input></Link>
-</button>
-
+<td> <h5>36 Location Universal Core Communication Board</h5><button>
+  <Link to="/Square36" style={{ textDecoration: 'none' }}><img src={SquareNum36} /></Link>
+</button></td>
+</tr>
+</table>
 </center>
     </div>
 )
@@ -98,73 +128,21 @@ const home = () => (
 
 // first section
 const Square4 = () => (
-  <div>
-    <div>
-  <div>
-    <br/>
-    <center>
-<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }} id ="button">
-  <h2 style={{height: 5}}>Like</h2>
- <input type="image" src={like} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Like";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-</button>
-{"\n"}
-
-<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Want</h2>
- <input type="image" src={want} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Want";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-
-<br />
-<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Not</h2>
-<input type="image" src={not} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Not";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-{"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play" style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Go</h2>
-<input type="image" src={go} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Go";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-{"\n"}
+  <div id ="div1">
+<center>
+    <table>
+  <tr>
+<td><button><img src= {like} /></button></td>
+  <td><button><img src= {want} /></button></td>
+  </tr>
+  <tr>
+    <td><button><img src= {not} /></button></td>
+      <td><button><img src= {go} /></button></td>
+</tr>
+</table>
 </center>
+</div>
 
-</div>
-</div>
-  </div>
 
 )
 
@@ -174,143 +152,28 @@ const Square4 = () => (
 
 //second section
 const Square9 = () => (
-  <div>
-    <div>
-
-  <div>
+  <div >
     <center>
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Like</h2>
-  <input type="image" src={like} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Like";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-{"\n"}
-
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Want</h2>
-   <input type="image" src={want}></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Want";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-{"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Get</h2>
-  <input type="image" src={get} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Get";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-
-<br />
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Not</h2>
-   <input type="image" src={not}></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Not";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-{"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Go</h2>
-   <input type="image" src={go} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Go";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-{"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Look</h2>
-  <input type="image" src={look} ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Look";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-</button>
-
-
-<br />
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>I</h2>
-<input type="image" src={I1}  ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "I";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-</button>
-{"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>He</h2>
-   <input type="image" src={he}  ></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "He";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
-{"\n"}
-<button onclick="speechSynthesis.speak(su)" value="play"  style={{padding: 0 }}>
-  <h2 style={{height: 5}}>Open</h2> <input type="image" src={open}></input>
-<script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Open";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-
-</button>
+  <table>
+<tr>
+  <td><button><img src= {like} /></button></td>
+    <td><button><img src= {want} /></button></td>
+      <td><button><img src= {get} /></button></td>
+</tr>
+<tr>
+  <td><button><img src= {not} /></button></td>
+    <td><button><img src= {go} /></button></td>
+      <td><button><img src= {look} /></button></td>
+</tr>
+<tr>
+  <td><button><img src= {I1} /></button></td>
+    <td><button><img src= {he} /></button></td>
+      <td><button><img src= {open} /></button></td>
+</tr>
+  </table>
 </center>
-<br />
+</div>
 
-</div>
-</div>
-  </div>
 
 
 )
@@ -338,470 +201,57 @@ const Topic = ({ match }) => (
 //third section
 const Square36 = ({  }) => (
   <div>
-  <center><h2>36 Square Universal Core Communication Book</h2></center>
-    <div>
-
-  <div>
-    <center>
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={like} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "like";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Like</h2>
-  </button>
-  {"\n"}
-
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={want} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Want";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Want</h2>
-  </button>
-  {"\n"}
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={get} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Get";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Get</h2>
-  </button>
-  {"\n"}
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={make} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Make";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Make</h2>
-  </button>
-  {"\n"}
-
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={good} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Good";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Good</h2>
-  </button>
-  {"\n"}
-
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={more} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Move";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Move</h2>
-  </button>
-
-  <br />
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={not} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Not";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Not</h2>
-  </button>
-  {"\n"}
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={go} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Go";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Go</h2>
-  </button>
-  {"\n"}
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={look} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Look";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Look</h2>
-  </button>
-  {"\n"}
-
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={turn} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Turn";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Turn</h2>
-  </button>
-  {"\n"}
-
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={help} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Help";
-      //  speechSynthesis.speak(su);
-
-    </script>
-  <h2>Help</h2>
-  </button>
-  {"\n"}
-
-  <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={different} height = "180" width= "180"></input>
-  <script>
-        var su = new SpeechSynthesisUtterance();
-        su.lang = "en";
-        su.text = "Different";
-      //  speechSynthesis.speak(su);
-
-    </script>
-
-  <h2>Different</h2>
-  </button>
-  <br />
-
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={I1} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "I";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>I</h2>
-    </button>
-    {"\n"}
-
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={he} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "He";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>He</h2>
-    </button>
-    {"\n"}
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={open} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "Open";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>Open</h2>
-    </button>
-  {"\n"}
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={do1} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "Do";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>Do</h2>
-    </button>
-    {"\n"}
-
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={put} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "Put";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>Put</h2>
-    </button>
-    {"\n"}
-
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={same} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "Same";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>Same</h2>
-    </button>
-
-    <br />
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={you} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "You";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>You</h2>
-    </button>
-    {"\n"}
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={she} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "She";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>She</h2>
-    </button>
-    {"\n"}
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={that}  height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "That";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>That</h2>
-    </button>
-  {"\n"}
-
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={up} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "Up";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>Up</h2>
-    </button>
-    {"\n"}
-
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={all} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "All";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>All</h2>
-    </button>
-    {"\n"}
-
-    <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={some} height = "180" width= "180"></input>
-    <script>
-          var su = new SpeechSynthesisUtterance();
-          su.lang = "en";
-          su.text = "Some";
-        //  speechSynthesis.speak(su);
-
-      </script>
-
-    <h2>Some</h2>
-    </button>
-    <br/>
-
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={it} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "it";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>It</h2>
-      </button>
-      {"\n"}
-
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={here} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "Here";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>Here</h2>
-      </button>
-      {"\n"}
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={in1} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "In";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>In</h2>
-      </button>
-  {"\n"}
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={on} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "On";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>On</h2>
-      </button>
-      {"\n"}
-
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={can} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "Can";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>Can</h2>
-      </button>
-      {"\n"}
-
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={finish} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "Finished";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>Finished</h2>
-      </button>
-
-      <br />
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={where} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "Where";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>Where</h2>
-      </button>
-      {"\n"}
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={what} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "What";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>What</h2>
-      </button>
-      {"\n"}
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={why}  height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "Why";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>Why</h2>
-      </button>
-
-  {"\n"}
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={who} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "Who";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>Who</h2>
-      </button>
-      {"\n"}
-
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={when} height = "180" width= "180" ></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "When";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>When</h2>
-      </button>
-      {"\n"}
-
-      <button onclick="speechSynthesis.speak(su)" value="play"> <input type="image" src={stop} height = "180" width= "180"></input>
-      <script>
-            var su = new SpeechSynthesisUtterance();
-            su.lang = "en";
-            su.text = "Stop";
-          //  speechSynthesis.speak(su);
-
-        </script>
-
-      <h2>Stop</h2>
-      </button>
-
-  </center>
-  <br />
-
-  </div>
-  </div>
+<center>
+      <table>
+      <tr>
+        <td><button><img src= {like} /></button></td>
+          <td><button><img src= {want} /></button></td>
+            <td><button><img src= {get} /></button></td>
+              <td><button><img src= {make} /></button></td>
+                <td><button><img src= {good} /></button></td>
+                  <td><button><img src= {more} /></button></td>
+
+</tr>
+<tr>  <td><button><img src= {not} /></button></td>
+  <td><button><img src= {go} /></button></td>
+    <td><button><img src= {look} /></button></td>
+      <td><button><img src= {turn} /></button></td>
+        <td><button><img src= {help} /></button></td>
+          <td><button><img src= {different} /></button></td>
+</tr>
+<tr>  <td><button><img src= {I1} /></button></td>
+  <td><button><img src= {he} /></button></td>
+    <td><button><img src= {open} /></button></td>
+      <td><button><img src= {do1} /></button></td>
+        <td><button><img src= {put} /></button></td>
+          <td><button><img src= {same} /></button></td>
+</tr>
+<tr>
+    <td><button><img src= {you} /></button></td>
+      <td><button><img src= {she} /></button></td>
+        <td><button><img src= {that} /></button></td>
+          <td><button><img src= {up} /></button></td>
+            <td><button><img src= {all} /></button></td>
+              <td><button><img src= {some} /></button></td>
+</tr>
+<tr>
+    <td><button><img src= {it} /></button></td>
+      <td><button><img src= {here} /></button></td>
+        <td><button><img src= {in1} /></button></td>
+          <td><button><img src= {on} /></button></td>
+            <td><button><img src= {can} /></button></td>
+              <td><button><img src= {finish} /></button></td>
+</tr>
+<tr>
+    <td><button><img src= {where} /></button></td>
+      <td><button><img src= {what} /></button></td>
+        <td><button><img src= {why} /></button></td>
+          <td><button><img src= {who} /></button></td>
+            <td><button><img src= {when} /></button></td>
+              <td><button><img src= {stop} /></button></td>
+
+</tr></table>
+</center>
   </div>
 
 )
