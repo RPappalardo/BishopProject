@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
-import logo from './logo.svg';
+//import DevTools from 'mobx-react-devtools';
 import unclogo from './unclogo.png';
 import './App.css';
 import all from './symbols/all.png';
@@ -40,11 +39,9 @@ import where from './symbols/where.png';
 import who from './symbols/who.png';
 import why from './symbols/why.png';
 import you from './symbols/you.png';
-
 import SquareNum4 from './symbols/4_Square_Book.gif';
 import SquareNum9 from './symbols/9_Location_Book.gif';
 import SquareNum36 from './symbols/36_Location_Board.gif';
-
 
 import {
   BrowserRouter as Router,
@@ -52,73 +49,220 @@ import {
   Link
 } from 'react-router-dom'
 
-
-var WindowDimensions = React.createClass({
-    render: function() {
-        return <span>{this.state.width} x {this.state.height}</span>;
-    },
-    updateDimensions: function() {
-
-    var w = window,
-        d = document,
-        documentElement = d.documentElement,
-        body = d.getElementsByTagName('body')[0],
-        width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-        height = w.innerHeight|| documentElement.clientHeight|| body.clientHeight;
-
-        this.setState({width: width, height: height});
-        // if you are using ES2015 I'm pretty sure you can do this: this.setState({width, height});
-    },
-    componentWillMount: function() {
-        this.updateDimensions();
-    },
-    componentDidMount: function() {
-        window.addEventListener("resize", this.updateDimensions);
-    },
-    componentWillUnmount: function() {
-        window.removeEventListener("resize", this.updateDimensions);
-    }
-});
-
-const containerStyle = {
-//  width: store.screen.width,
-//  height: store.screen.height - 30,
-  position: 'absolute' ,
-  overflow: 'hidden' ,
-  left: 0,
-  top: 0,
-  whiteSpace: "nowrap",
-     textOverflow: "ellipsis",
-};
-
-function sayWord() {
-//  var msg = new SpeechSynthesisUtterance(store.word);
+//function sayWord() {
+//  var msg = new SpeechSynthesisUtterance('like');
 //  msg.lang = 'en-US';
 //  speechSynthesis.speak(msg);
+//}
+function sayWord1() {
+  var msg = new SpeechSynthesisUtterance('like');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord2() {
+  var msg = new SpeechSynthesisUtterance('want');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
 }
 
-const home = () => (
+function sayWord3() {
+  var msg = new SpeechSynthesisUtterance('not');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord4() {
+  var msg = new SpeechSynthesisUtterance('go');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord5() {
+  var msg = new SpeechSynthesisUtterance('get');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord6() {
+  var msg = new SpeechSynthesisUtterance('look');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord7() {
+  var msg = new SpeechSynthesisUtterance('I');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord8() {
+  var msg = new SpeechSynthesisUtterance('he');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord9() {
+  var msg = new SpeechSynthesisUtterance('open');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord10() {
+  var msg = new SpeechSynthesisUtterance('make');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord11() {
+  var msg = new SpeechSynthesisUtterance('good');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord12() {
+  var msg = new SpeechSynthesisUtterance('more');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord13() {
+  var msg = new SpeechSynthesisUtterance('turn');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord14() {
+  var msg = new SpeechSynthesisUtterance('help');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord15() {
+  var msg = new SpeechSynthesisUtterance('different');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord16() {
+  var msg = new SpeechSynthesisUtterance('do1');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord17() {
+  var msg = new SpeechSynthesisUtterance('put');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord18() {
+  var msg = new SpeechSynthesisUtterance('same');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord19() {
+  var msg = new SpeechSynthesisUtterance('you');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord20() {
+  var msg = new SpeechSynthesisUtterance('she');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord21() {
+  var msg = new SpeechSynthesisUtterance('that');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord22() {
+  var msg = new SpeechSynthesisUtterance('up');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord23() {
+  var msg = new SpeechSynthesisUtterance('all');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord24() {
+  var msg = new SpeechSynthesisUtterance('some');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord25() {
+  var msg = new SpeechSynthesisUtterance('it');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord26() {
+  var msg = new SpeechSynthesisUtterance('here');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord27() {
+  var msg = new SpeechSynthesisUtterance('in1');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord28() {
+  var msg = new SpeechSynthesisUtterance('on');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord29() {
+  var msg = new SpeechSynthesisUtterance('can');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord30() {
+  var msg = new SpeechSynthesisUtterance('finish');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord31() {
+  var msg = new SpeechSynthesisUtterance('where');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord32() {
+  var msg = new SpeechSynthesisUtterance('what');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord33() {
+  var msg = new SpeechSynthesisUtterance('why');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord34() {
+  var msg = new SpeechSynthesisUtterance('who');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord35() {
+  var msg = new SpeechSynthesisUtterance('when');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
+function sayWord36() {
+  var msg = new SpeechSynthesisUtterance('stop');
+  msg.lang = 'en-US';
+  speechSynthesis.speak(msg);
+}
 
+
+
+
+
+const home = () => (
   <div id = "home">
   <center>
     <div>
-    <h2 style={{ backgroundColor: 'skyblue' }}>Universal Core Communication Systems</h2>
+    <h2 style={{backgroundColor:'skyblue'}}>Universal Core Communication Systems</h2>
       <img src={unclogo} style={{width: 170, height: 100}} />
 </div>
 <table>
+  <tbody>
   <tr>
-<td> <h5>4 Square Universal Core Communication Book</h5> <button>
+<td><h5>4 Square Universal Core Communication Book</h5><button>
   <Link to="/Square4" style={{ textDecoration: 'none' }}><img src={SquareNum4} /></Link>
-</button> </td>
+</button></td>
 {"\n"}
 <td><h5>9 Location Universal Core Communication Book</h5><button>
-  <Link to="/Square9" style={{ textDecoration: 'none' }}><img src={SquareNum9} /></Link>
+  <Link to="/Square9" style={{textDecoration: 'none'}}><img src={SquareNum9} /></Link>
 </button> </td>
 {"\n"}
-<td> <h5>36 Location Universal Core Communication Board</h5><button>
-  <Link to="/Square36" style={{ textDecoration: 'none' }}><img src={SquareNum36} /></Link>
+<td><h5>36 Location Universal Core Communication Board</h5><button>
+  <Link to="/Square36" style={{textDecoration: 'none'}}><img src={SquareNum36} /></Link>
 </button></td>
 </tr>
+</tbody>
 </table>
 </center>
     </div>
@@ -131,22 +275,20 @@ const Square4 = () => (
   <div id ="div1">
 <center>
     <table>
+      <tbody>
   <tr>
-<td><button><img src= {like} /></button></td>
-  <td><button><img src= {want} /></button></td>
+<td><button onClick={sayWord1}><img src={like}/></button></td>
+  <td><button onClick={sayWord2}><img src={want}/></button></td>
   </tr>
   <tr>
-    <td><button><img src= {not} /></button></td>
-      <td><button><img src= {go} /></button></td>
+    <td><button onClick={sayWord3}><img src={not}/></button></td>
+      <td><button onClick={sayWord4}><img src={go}/></button></td>
 </tr>
+</tbody>
 </table>
 </center>
 </div>
-
-
 )
-
-
 
 
 
@@ -155,34 +297,27 @@ const Square9 = () => (
   <div >
     <center>
   <table>
+    <tbody>
 <tr>
-  <td><button><img src= {like} /></button></td>
-    <td><button><img src= {want} /></button></td>
-      <td><button><img src= {get} /></button></td>
+  <td><button onClick={sayWord1}><img src={like}/></button></td>
+    <td><button onClick={sayWord2}><img src={want}/></button></td>
+      <td><button onClick={sayWord5}><img src={get}/></button></td>
 </tr>
 <tr>
-  <td><button><img src= {not} /></button></td>
-    <td><button><img src= {go} /></button></td>
-      <td><button><img src= {look} /></button></td>
+  <td><button onClick={sayWord3}><img src={not}/></button></td>
+    <td><button onClick={sayWord4}><img src={go}/></button></td>
+      <td><button onClick={sayWord6}><img src={look}/></button></td>
 </tr>
 <tr>
-  <td><button><img src= {I1} /></button></td>
-    <td><button><img src= {he} /></button></td>
-      <td><button><img src= {open} /></button></td>
+  <td><button onClick={sayWord7}><img src={I1}/></button></td>
+    <td><button onClick={sayWord8}><img src={he}/></button></td>
+      <td><button onClick={sayWord9}><img src={open}/></button></td>
 </tr>
+</tbody>
   </table>
 </center>
 </div>
-
-
-
 )
-
-
-
-
-
-
 
 
 const Topic = ({ match }) => (
@@ -192,75 +327,63 @@ const Topic = ({ match }) => (
 )
 
 
-
-
-
-
-
-
 //third section
 const Square36 = ({  }) => (
   <div>
 <center>
       <table>
+        <tbody>
       <tr>
-        <td><button><img src= {like} /></button></td>
-          <td><button><img src= {want} /></button></td>
-            <td><button><img src= {get} /></button></td>
-              <td><button><img src= {make} /></button></td>
-                <td><button><img src= {good} /></button></td>
-                  <td><button><img src= {more} /></button></td>
-
+        <td><button onClick={sayWord1}><img src={like}/></button></td>
+          <td><button onClick={sayWord2}><img src={want}/></button></td>
+            <td><button onClick={sayWord5}><img src={get}/></button></td>
+              <td><button onClick={sayWord10}><img src={make}/></button></td>
+                <td><button onClick={sayWord11}><img src={good}/></button></td>
+                  <td><button onClick={sayWord12}><img src={more}/></button></td>
 </tr>
-<tr>  <td><button><img src= {not} /></button></td>
-  <td><button><img src= {go} /></button></td>
-    <td><button><img src= {look} /></button></td>
-      <td><button><img src= {turn} /></button></td>
-        <td><button><img src= {help} /></button></td>
-          <td><button><img src= {different} /></button></td>
+<tr><td><button onClick={sayWord3}><img src={not}/></button></td>
+  <td><button onClick={sayWord4}><img src={go}/></button></td>
+    <td><button onClick={sayWord6}><img src={look}/></button></td>
+      <td><button onClick={sayWord13}><img src={turn}/></button></td>
+        <td><button onClick={sayWord14}><img src={help}/></button></td>
+          <td><button onClick={sayWord15}><img src={different}/></button></td>
 </tr>
-<tr>  <td><button><img src= {I1} /></button></td>
-  <td><button><img src= {he} /></button></td>
-    <td><button><img src= {open} /></button></td>
-      <td><button><img src= {do1} /></button></td>
-        <td><button><img src= {put} /></button></td>
-          <td><button><img src= {same} /></button></td>
-</tr>
-<tr>
-    <td><button><img src= {you} /></button></td>
-      <td><button><img src= {she} /></button></td>
-        <td><button><img src= {that} /></button></td>
-          <td><button><img src= {up} /></button></td>
-            <td><button><img src= {all} /></button></td>
-              <td><button><img src= {some} /></button></td>
+<tr><td><button onClick={sayWord7}><img src={I1}/></button></td>
+  <td><button onClick={sayWord8}><img src={he}/></button></td>
+    <td><button onClick={sayWord9}><img src={open}/></button></td>
+      <td><button onClick={sayWord16}><img src={do1}/></button></td>
+        <td><button onClick={sayWord17}><img src={put}/></button></td>
+          <td><button onClick={sayWord18}><img src={same}/></button></td>
 </tr>
 <tr>
-    <td><button><img src= {it} /></button></td>
-      <td><button><img src= {here} /></button></td>
-        <td><button><img src= {in1} /></button></td>
-          <td><button><img src= {on} /></button></td>
-            <td><button><img src= {can} /></button></td>
-              <td><button><img src= {finish} /></button></td>
+    <td><button onClick={sayWord19}><img src={you}/></button></td>
+      <td><button onClick={sayWord20}><img src={she}/></button></td>
+        <td><button onClick={sayWord21}><img src={that}/></button></td>
+          <td><button onClick={sayWord22}><img src={up}/></button></td>
+            <td><button onClick={sayWord23}><img src={all}/></button></td>
+              <td><button onClick={sayWord24}><img src={some}/></button></td>
 </tr>
 <tr>
-    <td><button><img src= {where} /></button></td>
-      <td><button><img src= {what} /></button></td>
-        <td><button><img src= {why} /></button></td>
-          <td><button><img src= {who} /></button></td>
-            <td><button><img src= {when} /></button></td>
-              <td><button><img src= {stop} /></button></td>
-
-</tr></table>
+    <td><button onClick={sayWord25}><img src={it}/></button></td>
+      <td><button onClick={sayWord26}><img src={here}/></button></td>
+        <td><button onClick={sayWord27}><img src={in1}/></button></td>
+          <td><button onClick={sayWord28}><img src={on}/></button></td>
+            <td><button onClick={sayWord29}><img src={can}/></button></td>
+              <td><button onClick={sayWord30}><img src={finish}/></button></td>
+</tr>
+<tr>
+    <td><button onClick={sayWord31}><img src={where}/></button></td>
+      <td><button onClick={sayWord32}><img src={what}/></button></td>
+        <td><button onClick={sayWord33}><img src={why}/></button></td>
+          <td><button onClick={sayWord34}><img src={who}/></button></td>
+            <td><button onClick={sayWord35}><img src={when}/></button></td>
+              <td><button onClick={sayWord36}><img src={stop}/></button></td>
+</tr>
+</tbody>
+</table>
 </center>
   </div>
-
 )
-
-
-
-
-
-
 
 
 //parts put together
@@ -268,7 +391,6 @@ const BasicExample = () => (
   <Router>
     <div>
       <div className="App">
-
 </div>
 <Route exact path="/" component={home}/>
   <Route path="/0" component={home}/>
