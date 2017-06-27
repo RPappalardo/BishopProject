@@ -277,12 +277,12 @@ const Square4 = () => (
     <table>
       <tbody>
   <tr>
-<td><button onClick={sayWord1}><img src={like}/></button></td>
-  <td><button onClick={sayWord2}><img src={want}/></button></td>
+<td><button onClick={sayWord1} tabIndex="1"><img src={like}/></button></td>
+  <td><button onClick={sayWord2} tabIndex="2"><img src={want}/></button></td>
   </tr>
   <tr>
-    <td><button onClick={sayWord3}><img src={not}/></button></td>
-      <td><button onClick={sayWord4}><img src={go}/></button></td>
+    <td><button onClick={sayWord3} tabIndex="3"><img src={not}/></button></td>
+      <td><button onClick={sayWord4} tabIndex="4"><img src={go}/></button></td>
 </tr>
 </tbody>
 </table>
@@ -294,24 +294,24 @@ const Square4 = () => (
 
 //second section
 const Square9 = () => (
-  <div >
+  <div>
     <center>
   <table>
     <tbody>
 <tr>
-  <td><button onClick={sayWord1}><img src={like}/></button></td>
-    <td><button onClick={sayWord2}><img src={want}/></button></td>
-      <td><button onClick={sayWord5}><img src={get}/></button></td>
+  <td><button onClick={sayWord1} tabIndex="1"><img src={like}/></button></td>
+    <td><button onClick={sayWord2} tabIndex="2"><img src={want}/></button></td>
+      <td><button onClick={sayWord5} tabIndex="3"><img src={get}/></button></td>
 </tr>
 <tr>
-  <td><button onClick={sayWord3}><img src={not}/></button></td>
-    <td><button onClick={sayWord4}><img src={go}/></button></td>
-      <td><button onClick={sayWord6}><img src={look}/></button></td>
+  <td><button onClick={sayWord3} tabIndex="4"><img src={not}/></button></td>
+    <td><button onClick={sayWord4} tabIndex="5"><img src={go}/></button></td>
+      <td><button onClick={sayWord6} tabIndex="6"><img src={look}/></button></td>
 </tr>
 <tr>
-  <td><button onClick={sayWord7}><img src={I1}/></button></td>
-    <td><button onClick={sayWord8}><img src={he}/></button></td>
-      <td><button onClick={sayWord9}><img src={open}/></button></td>
+  <td><button onClick={sayWord7} tabIndex="7"><img src={I1}/></button></td>
+    <td><button onClick={sayWord8} tabIndex="8"><img src={he}/></button></td>
+      <td><button onClick={sayWord9} tabIndex="10"><img src={open}/></button></td>
 </tr>
 </tbody>
   </table>
