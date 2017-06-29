@@ -3,7 +3,11 @@ table {
   border-collapse: collapse;
   height: 100vmin;
 }
-
+#table2{
+  border-collapse: inherit;
+  height:auto;
+  width: auto;
+}
 img {
   width: 100%;
 }
