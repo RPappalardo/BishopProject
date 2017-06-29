@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './Counter';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 // https://github.com/flatiron/director/issues/349 explains
 // why I need the strange path.
@@ -42,4 +42,4 @@ ReactDOM.render(
   <App counter={store} />,
   document.getElementById('root')
 );
-registerServiceWorker();
+// registerServiceWorker();
