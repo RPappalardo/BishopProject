@@ -67,9 +67,9 @@ const home = () => (
          <center>
             <div>
                <h2 style={{backgroundColor:'skyblue'}}>Universal Core Communication Systems</h2>
-               <img src={unclogo} style={{width: 170, height: 100}} />
+               <img src={unclogo} style={{width: 170, height: 120}} />
             </div>
-            <table>
+            <table id ="table2">
                <tbody>
                   <tr>
                      <td>
@@ -105,102 +105,59 @@ const home = () => (
       </div>
       )
       // first section
-      const Square4 = () => (
-      <div id ="div1">
-         <center>
-            <table>
-               <tbody>
-                  <tr>
-                     <td>
-                        <button tabIndex="1">
-                        <img src={like}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="2">
-                        <img src={want}/>
-                        </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <button tabIndex="3">
-                        <img src={not}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="4">
-                        <img src={go}/>
-                        </button>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </center>
-      </div>
-      )
+      const Square4 = ({  }) => {
+        var rows = [];
+        for(var r = 0; r < 2; r++) {
+          var cols = [];
+          for(var c = 0; c < 2; c++) {
+            var word = words[r*2 + c];
+            cols.push(
+              <td>
+                <button data-word={word}>
+                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`}/>
+                </button>
+              </td>);
+          }
+          rows.push(<tr>{cols}</tr>);
+        }
+        return (
+          <div>
+             <center>
+                <table onClick={sayTheWord}>
+                   <tbody>
+                   {rows}
+                   </tbody>
+                </table>
+             </center>
+          </div>
+          )};
       //second section
-      const Square9 = () => (
-      <div>
-         <center>
-            <table>
-               <tbody>
-                  <tr>
-                     <td>
-                        <button tabIndex="1">
-                        <img src={like}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="2">
-                        <img src={want}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="3">
-                        <img src={get}/>
-                        </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <button tabIndex="4">
-                        <img src={not}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="5">
-                        <img src={go}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="6">
-                        <img src={look}/>
-                        </button>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <button tabIndex="7">
-                        <img src={I1}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="8">
-                        <img src={he}/>
-                        </button>
-                     </td>
-                     <td>
-                        <button tabIndex="10">
-                        <img src={open}/>
-                        </button>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-         </center>
-      </div>
-      )
+      const Square9 = ({  }) => {
+        var rows = [];
+        for(var r = 0; r < 3; r++) {
+          var cols = [];
+          for(var c = 0; c < 3; c++) {
+            var word = words[r*3 + c];
+            cols.push(
+              <td>
+                <button data-word={word}>
+                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`}/>
+                </button>
+              </td>);
+          }
+          rows.push(<tr>{cols}</tr>);
+        }
+        return (
+          <div>
+             <center>
+                <table onClick={sayTheWord}>
+                   <tbody>
+                   {rows}
+                   </tbody>
+                </table>
+             </center>
+          </div>
+          )};
       const Topic = ({ match }) => (
       <div>
          <h3>{match.params.topicId}</h3>
