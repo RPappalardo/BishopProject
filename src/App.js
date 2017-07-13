@@ -69,7 +69,7 @@ const home = () => (
                <h2 style={{backgroundColor:'skyblue'}}>Universal Core Communication Systems</h2>
                <img src={unclogo} style={{width: 170, height: 120}} />
             </div>
-            <table id ="table2">
+            <table id="table2">
                <tbody>
                   <tr>
                      <td>
