@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import { observer } from 'mobx-react';
+import React from 'react';
+//import { observer } from 'mobx-react';
+import KeyHandler from 'react-key-handler';
 //import DevTools from 'mobx-react-devtools';
 import unclogo from './unclogo.png';
+import cldslogo from './cldslogo.jpeg';
 import './App.css';
 import all from './symbols/all.png';
 import can from './symbols/can.png';
@@ -67,7 +69,8 @@ const home = () => (
          <center>
             <div>
                <h2 style={{backgroundColor:'skyblue'}}>Universal Core Communication Systems</h2>
-               <img src={unclogo} style={{width: 170, height: 120}} />
+               <img src={unclogo} style={{width: 170, height: 120}} alt=""/>
+               <img src={cldslogo} style={{width: 120, height: 120}} alt=""/>
             </div>
             <table id="table2">
                <tbody>
@@ -76,7 +79,7 @@ const home = () => (
                         <h5>4 Square Universal Core Communication Book</h5>
                         <button>
                         <Link to="/Square4" style={{ textDecoration: 'none' }}>
-                        <img src={SquareNum4} />
+                        <img src={SquareNum4} alt="4 Square Book"/>
                         </Link>
                         </button>
                      </td>
@@ -85,7 +88,7 @@ const home = () => (
                         <h5>9 Location Universal Core Communication Book</h5>
                         <button>
                         <Link to="/Square9" style={{textDecoration: 'none'}}>
-                        <img src={SquareNum9} />
+                        <img src={SquareNum9} alt="9 Square Book"/>
                         </Link>
                         </button>
                      </td>
@@ -94,7 +97,7 @@ const home = () => (
                         <h5>36 Location Universal Core Communication Board</h5>
                         <button>
                         <Link to="/Square36" style={{textDecoration: 'none'}}>
-                        <img src={SquareNum36} />
+                        <img src={SquareNum36} alt="36 Square Board"/>
                         </Link>
                         </button>
                      </td>
@@ -112,9 +115,9 @@ const home = () => (
           for(var c = 0; c < 2; c++) {
             var word = words[r*2 + c];
             cols.push(
-              <td>
+              <td key={rows.words}>
                 <button data-word={word}>
-                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`}/>
+                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`} alt=""/>
                 </button>
               </td>);
           }
@@ -139,9 +142,9 @@ const home = () => (
           for(var c = 0; c < 3; c++) {
             var word = words[r*3 + c];
             cols.push(
-              <td>
+              <td key={rows.words}>
                 <button data-word={word}>
-                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`}/>
+                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`} alt=""/>
                 </button>
               </td>);
           }
@@ -171,9 +174,9 @@ const home = () => (
           for(var c = 0; c < 6; c++) {
             var word = words[r*6 + c];
             cols.push(
-              <td>
+              <td key={rows.words}>
                 <button data-word={word}>
-                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`}/>
+                  <img src={process.env.PUBLIC_URL + `/symbols/${word}.png`} alt=""/>
                 </button>
               </td>);
           }
